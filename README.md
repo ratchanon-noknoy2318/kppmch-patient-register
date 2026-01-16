@@ -1,79 +1,61 @@
-# KPPMCH Patient Register
-**Hospital Digital Intake and Pre-Registration System**
+# Telemedicine Registration System
+**Digital Pre-registration Platform for Healthcare Efficiency**
 
-A high-performance enterprise solution engineered for Kamphaeng Phet Municipality Community Hospital (KPPMCH). This system digitizes the patient intake process, leveraging a serverless architecture to bridge modern web interfaces with accessible cloud data management.
+[Live Demo](https://kppmch-register.vercel.app/) | [Portfolio](https://ratchanon-portfolio.vercel.app/)
 
 ---
 
-### Project Specification
+### System Visuals
+<p align="center">
+  <img src="https://kppmch-register.vercel.app/og-image.png" alt="Telemedicine System Screenshot" width="800">
+</p>
+
+---
+
+### Project Overview
 | Category | Detail |
 | :--- | :--- |
-| **Project Name** | KPPMCH Patient Register |
 | **Organization** | Kamphaeng Phet Municipality Community Hospital (KPPMCH) |
-| **Developer** | Ratchanon Noknoy, B.Sc. (Software Engineering) |
-| **Primary Framework** | Next.js 14+ (App Router Architecture) |
-| **API Middleware** | Google Apps Script (RESTful API Layer) |
-| **Database Engine** | Google Sheets (Serverless Data Store) |
+| **Core Stack** | Next.js, React, Tailwind CSS |
+| **Primary Goal** | Minimize physical hospital congestion and streamline registration |
+| **Deployment** | Vercel |
 
 ---
 
-### System Architecture & Design Patterns
+### The Problem & The Solution
+* **The Problem:** Patients faced long queues and manual paperwork during registration, leading to hospital overcrowding and medical staff burnout.
+* **The Solution:** Developed a mobile-first digital registration system that allows patients to submit their information and appointments in advance, reducing on-site processing time significantly.
 
-The application is built on a **Decoupled Serverless Architecture**, ensuring high availability and zero-cost infrastructure maintenance for the organization:
+---
 
-#### 1. Presentation Layer (Frontend)
-* **Next.js App Router:** Implements advanced routing and Server-Side Rendering (SSR) to ensure rapid initial page loads.
-* **Tailwind CSS Architecture:** Utilizes a utility-first styling approach for a fully responsive, mobile-optimized registration interface.
-* **Component-Based Design:** Modular UI structure allowing for rapid scaling and integration with existing Hospital Information Systems (HIS).
-
-#### 2. API & Integration Layer (Google Apps Script)
-* **RESTful API Proxy:** Google Apps Script (GAS) acts as a secure API gateway, handling `POST` requests from the Next.js frontend.
-* **Data Controller:** The GAS layer executes server-side logic to process, sanitize, and append patient data to the repository.
-* **Cross-Origin Resource Sharing (CORS):** Managed through GAS to ensure secure communication between the Vercel-hosted frontend and the Google ecosystem.
-
-#### 3. Data Storage Layer
-* **Google Sheets Database:** Utilized as a flexible, real-time database, enabling hospital administrative staff to manage patient records through a familiar interface without requiring database management expertise.
-
-
+### Key Features
+* **Automated Pre-registration:** User-friendly forms for patients to submit required health data before arrival.
+* **Real-time Validation:** Client-side and server-side validation to ensure data accuracy for medical records.
+* **Responsive Design:** Fully optimized for mobile devices, catering to the diverse device types used by patients.
+* **Health Tech Integration:** Designed to bridge the gap between patient inputs and hospital data management workflows.
 
 ---
 
 ### Technical Infrastructure
 | Component | Technology | Description |
 | :--- | :--- | :--- |
-| **Core Engine** | Next.js | High-performance React framework for server-side processing. |
-| **API Gateway** | Google Apps Script | Serverless function execution for data handling. |
-| **Data Storage** | Google Sheets | Headless CMS and database for non-technical administrative access. |
-| **Styling Engine** | Tailwind CSS | Utility-first CSS for consistent and maintainable design systems. |
-| **Deployment** | Vercel | Edge computing environment with automated CI/CD integration. |
+| **Framework** | Next.js | Modern React framework for fast, optimized web experiences |
+| **UI/UX** | Tailwind CSS | Utility-first CSS for a clean, professional medical interface |
+| **Hosting** | Vercel | High-availability cloud hosting with automated CI/CD |
+| **Data Flow** | RESTful Principles | Structured data handling for future HIS/HOSxP integration |
 
 ---
 
-### Operational Impact & Objectives
-* **Queue Optimization:** Significantly reduced physical counter congestion by enabling pre-arrival remote registration.
-* **Workflow Digitization:** Seamlessly transitioned from manual paper-based forms to a secure digital intake pipeline.
-* **Administrative Efficiency:** Streamlined data entry workflows for hospital medical records and administrative staff.
-* **High Accessibility:** Optimized for low-bandwidth mobile environments to ensure all demographics can access hospital services 24/7.
+### Installation & Setup
+1. **Clone Repository:** `git clone https://github.com/ratchanon-noknoy2318/telemedicine-register.git`
+2. **Install Dependencies:** `npm install`
+3. **Local Development:** `npm run dev`
+4. **Production Build:** `npm run build`
 
 ---
 
-### System Implementation
-| Step | Action | Command |
-| :--- | :--- | :--- |
-| 1 | Clone Repository | `git clone https://github.com/Ratchanon2318/kppmch-patient-register.git` |
-| 2 | Install Dependencies | `npm install` |
-| 3 | Production Build | `npm run build` |
-| 4 | Execute Development | `npm run dev` |
+### Contact & Support
+**Ratchanon Noknoy** (Software Engineer)  
+[LinkedIn](https://www.linkedin.com/in/ratchanon-noknoy/) | [GitHub](https://github.com/ratchanon-noknoy2318)
 
----
-
-### License
-This project is licensed under the **MIT License**.
-Copyright (c) 2026 Ratchanon Noknoy. All rights reserved.
-
----
-
-### Contact Information
-* **Software Engineer:** Ratchanon Noknoy, B.Sc. (Software Engineering)
-* **LinkedIn:** [linkedin.com/in/ratchanon-noknoy](https://www.linkedin.com/in/ratchanon-noknoy/)
-* **Portfolio:** [ratchanonnoknoy.vercel.app](https://ratchanonnoknoy.vercel.app/)
+*Under MIT License | Copyright (c) 2026 Ratchanon Noknoy*
