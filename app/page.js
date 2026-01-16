@@ -93,7 +93,7 @@ export default function Page() {
                 <Link href="/PatientRegister" className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-semibold rounded-lg text-white bg-violet-600 hover:bg-violet-700 transform transition-all duration-300 hover:scale-105 shadow-lg shadow-violet-500/30 hover:shadow-violet-500/50">
                   ลงทะเบียนพบแพทย์
                 </Link>
-                <Link href="https://telemedscheduler.vercel.app/" targ className="inline-flex items-center justify-center px-8 py-3 border border-slate-600 text-base font-semibold rounded-lg text-slate-300 bg-transparent hover:bg-slate-800/50 backdrop-blur-sm transition-colors duration-300">
+                <Link href="https://telemedscheduler.vercel.app/" target='_blank' className="inline-flex items-center justify-center px-8 py-3 border border-slate-600 text-base font-semibold rounded-lg text-slate-300 bg-transparent hover:bg-slate-800/50 backdrop-blur-sm transition-colors duration-300">
                   ค้นหาวัน-เวลานัดหมาย
                 </Link>
               </motion.div>
@@ -117,6 +117,33 @@ export default function Page() {
             </div>
           </div>
         </section>
+
+        {/* News Update Section */}
+        <section className="py-12 border-y border-slate-800 bg-slate-800/20">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="text-left">
+                <span className="inline-block py-1 px-3 rounded-full bg-violet-500/10 text-violet-400 text-sm font-semibold mb-2">
+                  ข่าวประชาสัมพันธ์
+                </span>
+                <h3 className="text-xl md:text-2xl font-bold text-slate-100">
+                  กิจกรรมโครงการ Telemedicine เทศบาลเมืองกำแพงเพชร
+                </h3>
+                <p className="text-slate-400 mt-1">
+                  ดูรายละเอียดภาพกิจกรรมและข่าวสารเพิ่มเติม
+                </p>
+              </div>
+              <Link 
+                href="https://www.kppmu.go.th/news-detail?hd=1&id=124000" 
+                target="_blank"
+                className="shrink-0 inline-flex items-center justify-center px-6 py-3 border border-slate-600 text-base font-medium rounded-lg text-slate-300 bg-slate-800 hover:bg-slate-700 transition-all duration-300 hover:text-white group"
+              >
+                อ่านข่าวสาร
+                <svg className="w-4 h-4 ml-2 text-slate-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+              </Link>
+            </div>
+          </div>
+        </section>
        
         {/* What is it Section */}
         <section id="what-is-it" className="py-16 md:py-24">
@@ -131,8 +158,8 @@ export default function Page() {
                 className="md:w-5/12"
               >
                 <Image
-                  src="/content/what-is-it.png"
-                  alt="ภาพประกอบบริการ Telemedicine"
+                  src="/content/what-is-it.jpg"
+                  alt="แพทย์ทางไกล กำแพงเพชร"
                   width={500}
                   height={500}
                   className="rounded-xl shadow-2xl shadow-indigo-500/10 object-cover w-full h-auto"
@@ -153,73 +180,6 @@ export default function Page() {
                     อ่านต่อ
                   </Link>
                 </p>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        
-
-        {/* How it works Section */}
-        <section id="how-it-works" className="py-16 md:py-24 bg-slate-900/70 backdrop-blur-sm scroll-mt-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-left md:text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-50">3 ขั้นตอนง่ายๆ ในการเข้ารับบริการ</h2>
-              <p className="mt-4 text-lg text-slate-400">
-                เริ่มต้นประสบการณ์การดูแลสุขภาพยุคใหม่ได้ในไม่กี่ขั้นตอน
-              </p>
-            </div>
-            <div className="relative mt-16 md:mt-20">
-              {/* The connecting line for desktop view */}
-              <div className="hidden md:block absolute top-10 left-0 w-full h-0.5 bg-slate-800" aria-hidden="true">
-                <div className="absolute top-1/2 left-1/2 w-[calc(100%-20rem)] h-0.5 -translate-x-1/2 -translate-y-1/2 border-t-2 border-dashed border-slate-700"></div>
-              </div>
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
-                variants={{
-                  visible: { transition: { staggerChildren: 0.2 } },
-                  hidden: {},
-                }}
-                className="relative grid gap-12 md:grid-cols-3 text-left md:text-center"
-              >
-                {/* Step 1 */}
-                <motion.div
-                  variants={{
-                    hidden: { opacity: 0, y: 30 },
-                    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-                  }}
-                  className="relative p-4"
-                >
-                  <div className="relative flex items-center justify-center h-20 w-20 rounded-full bg-slate-800 border-2 border-violet-500 mx-auto mb-6 shadow-lg shadow-violet-500/10">
-                    <span className="text-3xl font-bold text-slate-50">1</span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-slate-100">ลงทะเบียนและทำนัด</h3>
-                  <p className="mt-2 text-slate-400">กรอกข้อมูลส่วนตัวและอาการเบื้องต้นเพื่อทำการนัดหมายพบแพทย์</p>
-                </motion.div>
-                {/* Step 2 */}
-                <motion.div
-                  variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
-                  className="relative p-4"
-                >
-                  <div className="relative flex items-center justify-center h-20 w-20 rounded-full bg-slate-800 border-2 border-violet-500 mx-auto mb-6 shadow-lg shadow-violet-500/10">
-                    <span className="text-3xl font-bold text-slate-50">2</span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-slate-100">พบแพทย์ผ่านวิดีโอคอล</h3>
-                  <p className="mt-2 text-slate-400">ปรึกษาปัญหาสุขภาพกับแพทย์ผู้เชี่ยวชาญผ่านระบบวิดีโอคอลที่ปลอดภัย</p>
-                </motion.div>
-                {/* Step 3 */}
-                <motion.div
-                  variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
-                  className="relative p-4"
-                >
-                  <div className="relative flex items-center justify-center h-20 w-20 rounded-full bg-slate-800 border-2 border-violet-500 mx-auto mb-6 shadow-lg shadow-violet-500/10">
-                    <span className="text-3xl font-bold text-slate-50">3</span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-slate-100">รับยาและเอกสาร</h3>
-                  <p className="mt-2 text-slate-400">ขณะนี้โรงพยาบาลยังไม่มีบริการส่งยาและใบรับรองแพทย์ กรุณามารับด้วยตนเองที่โรงพยาบาล</p>
-                </motion.div>
               </motion.div>
             </div>
           </div>
@@ -294,6 +254,183 @@ export default function Page() {
                     เหมาะสำหรับผู้ป่วยโรคเรื้อรังที่ต้องการติดตามอาการกับแพทย์อย่างสม่ำเสมอ
                   </p>
                 </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Pricing Section */}
+        <section id="pricing" className="py-16 md:py-24 scroll-mt-16">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-left md:text-center max-w-3xl mx-auto mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-50">สิทธิ์การรักษาและอัตราค่าบริการ</h2>
+              <p className="mt-4 text-lg text-slate-400">
+                ตรวจสอบสิทธิ์การรักษาที่รองรับและอัตราค่าบริการเบื้องต้น
+              </p>
+            </div>
+            
+            {/* Supported Rights Section */}
+            <div className="mb-16">
+              <div className="grid md:grid-cols-3 gap-6">
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  className="bg-slate-800/30 p-6 rounded-xl border border-slate-700 hover:border-violet-500/50 transition-colors"
+                >
+                  <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-4 text-blue-400">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                  </div>
+                  <h4 className="text-lg font-semibold text-slate-100 mb-2">สิทธิ์ข้าราชการ</h4>
+                  <p className="text-slate-400 text-sm">สามารถเบิกจ่ายตรงได้ตามระเบียบกรมบัญชีกลาง (เฉพาะค่ายาและเวชภัณฑ์)</p>
+                </motion.div>
+
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  className="bg-slate-800/30 p-6 rounded-xl border border-slate-700 hover:border-yellow-500/50 transition-colors"
+                >
+                  <div className="w-12 h-12 bg-yellow-500/20 rounded-lg flex items-center justify-center mb-4 text-yellow-400">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" /></svg>
+                  </div>
+                  <h4 className="text-lg font-semibold text-slate-100 mb-2">สิทธิ์บัตรทอง (30 บาท)</h4>
+                  <p className="text-slate-400 text-sm">ใช้สิทธิ์ได้เฉพาะผู้ที่มีสิทธิ์รักษาอยู่ที่โรงพยาบาลชุมชนเทศบาลเมืองกำแพงเพชร</p>
+                </motion.div>
+
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  className="bg-slate-800/30 p-6 rounded-xl border border-slate-700 hover:border-green-500/50 transition-colors"
+                >
+                  <div className="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-4 text-green-400">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                  </div>
+                  <h4 className="text-lg font-semibold text-slate-100 mb-2">ชำระเงินเอง</h4>
+                  <p className="text-slate-400 text-sm">สำหรับผู้ที่ไม่มีสิทธิ์รักษาที่โรงพยาบาล หรือต้องการความสะดวกรวดเร็ว</p>
+                </motion.div>
+              </div>
+              <div className="mt-8 text-center flex flex-col items-center gap-4">
+                <Link
+                  href="https://eservices.nhso.go.th/eServices/mobile/login.xhtml"
+                  target="_blank"
+                  className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 group"
+                >
+                  <svg className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                  ตรวจสอบสิทธิ์การรักษาออนไลน์ (สปสช.)
+                </Link>
+                 <p className="text-slate-500 text-sm">
+                   * กรุณาตรวจสอบสิทธิ์การรักษาของท่านกับเจ้าหน้าที่ก่อนเข้ารับบริการ โทร. 055-716-715
+                 </p>
+              </div>
+            </div>
+
+            {/* Pricing Table */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5 }}
+              className="max-w-4xl mx-auto overflow-hidden rounded-xl border border-slate-700 bg-slate-800/50 backdrop-blur-sm"
+            >
+              <table className="w-full text-left text-slate-300">
+                <thead className="bg-slate-900/50 text-slate-100 uppercase text-sm font-semibold">
+                  <tr>
+                    <th className="px-6 py-4">รายการ</th>
+                    <th className="px-6 py-4 text-right">ค่าบริการ (บาท)</th>
+                    <th className="px-6 py-4 hidden sm:table-cell">หมายเหตุ</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-700">
+                  <tr className="hover:bg-slate-700/30 transition-colors">
+                    <td className="px-6 py-4 font-medium">ค่าบริการทางการแพทย์ (ทั่วไป)</td>
+                    <td className="px-6 py-4 text-right">50 - 100</td>
+                    <td className="px-6 py-4 text-slate-400 text-sm hidden sm:table-cell">ขึ้นอยู่กับสิทธิ์การรักษา</td>
+                  </tr>
+                  <tr className="hover:bg-slate-700/30 transition-colors">
+                    <td className="px-6 py-4 font-medium">ค่ายาและเวชภัณฑ์</td>
+                    <td className="px-6 py-4 text-right">ตามจริง</td>
+                    <td className="px-6 py-4 text-slate-400 text-sm hidden sm:table-cell">ชำระเงินเมื่อมารับยา</td>
+                  </tr>
+                  <tr className="hover:bg-slate-700/30 transition-colors">
+                    <td className="px-6 py-4 font-medium">ค่าใบรับรองแพทย์</td>
+                    <td className="px-6 py-4 text-right">100 - 200</td>
+                    <td className="px-6 py-4 text-slate-400 text-sm hidden sm:table-cell">กรณีขอเพิ่มเติมนอกเหนือการรักษา</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div className="p-4 bg-slate-900/30 border-t border-slate-700 text-sm text-slate-400">
+                * อัตราค่าบริการอาจมีการเปลี่ยนแปลง โปรดสอบถามเจ้าหน้าที่ก่อนเข้ารับบริการ <br/>
+                ** ผู้มีสิทธิ์บัตรทอง/ประกันสังคม สามารถใช้สิทธิ์ได้ตามเงื่อนไขของโรงพยาบาล
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* How it works Section */}
+        <section id="how-it-works" className="py-16 md:py-24 bg-slate-900/70 backdrop-blur-sm scroll-mt-16">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-left md:text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-50">3 ขั้นตอนง่ายๆ ในการเข้ารับบริการ</h2>
+              <p className="mt-4 text-lg text-slate-400">
+                เริ่มต้นประสบการณ์การดูแลสุขภาพยุคใหม่ได้ในไม่กี่ขั้นตอน
+              </p>
+            </div>
+            <div className="relative mt-16 md:mt-20">
+              {/* The connecting line for desktop view */}
+              <div className="hidden md:block absolute top-10 left-0 w-full h-0.5 bg-slate-800" aria-hidden="true">
+                <div className="absolute top-1/2 left-1/2 w-[calc(100%-20rem)] h-0.5 -translate-x-1/2 -translate-y-1/2 border-t-2 border-dashed border-slate-700"></div>
+              </div>
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={{
+                  visible: { transition: { staggerChildren: 0.2 } },
+                  hidden: {},
+                }}
+                className="relative grid gap-12 md:grid-cols-3 text-left md:text-center"
+              >
+                {/* Step 1 */}
+                <motion.div
+                  variants={{
+                    hidden: { opacity: 0, y: 30 },
+                    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+                  }}
+                  className="relative p-4"
+                >
+                  <div className="relative flex items-center justify-center h-20 w-20 rounded-full bg-slate-800 border-2 border-violet-500 mx-auto mb-6 shadow-lg shadow-violet-500/10">
+                    <span className="text-3xl font-bold text-slate-50">1</span>
+                  </div>
+                  <h3 className="text-xl font-semibold text-slate-100">ลงทะเบียนและทำนัด</h3>
+                  <p className="mt-2 text-slate-400">กรอกข้อมูลส่วนตัวและอาการเบื้องต้นเพื่อทำการนัดหมายพบแพทย์</p>
+                </motion.div>
+                {/* Step 2 */}
+                <motion.div
+                  variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
+                  className="relative p-4"
+                >
+                  <div className="relative flex items-center justify-center h-20 w-20 rounded-full bg-slate-800 border-2 border-violet-500 mx-auto mb-6 shadow-lg shadow-violet-500/10">
+                    <span className="text-3xl font-bold text-slate-50">2</span>
+                  </div>
+                  <h3 className="text-xl font-semibold text-slate-100">พบแพทย์ผ่านวิดีโอคอล</h3>
+                  <p className="mt-2 text-slate-400">ปรึกษาปัญหาสุขภาพกับแพทย์ผู้เชี่ยวชาญผ่านระบบวิดีโอคอลที่ปลอดภัย</p>
+                </motion.div>
+                {/* Step 3 */}
+                <motion.div
+                  variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
+                  className="relative p-4"
+                >
+                  <div className="relative flex items-center justify-center h-20 w-20 rounded-full bg-slate-800 border-2 border-violet-500 mx-auto mb-6 shadow-lg shadow-violet-500/10">
+                    <span className="text-3xl font-bold text-slate-50">3</span>
+                  </div>
+                  <h3 className="text-xl font-semibold text-slate-100">รับยาและเอกสาร</h3>
+                  <p className="mt-2 text-slate-400">ขณะนี้โรงพยาบาลยังไม่มีบริการส่งยาและใบรับรองแพทย์ กรุณามารับด้วยตนเองที่โรงพยาบาล</p>
+                </motion.div>
               </motion.div>
             </div>
           </div>
