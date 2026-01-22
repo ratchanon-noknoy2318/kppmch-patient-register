@@ -2,7 +2,7 @@
 **Digital Pre-registration Platform**
 
 ---
-
+![Project Header](https://kppmch-register.vercel.app/og-image.png)
 ### Technical Stack
 | Category | Detail | Implementation |
 | :--- | :--- | :--- |
