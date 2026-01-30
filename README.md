@@ -5,57 +5,59 @@
 
 ---
 
-## Activity Recognition
-[![Kamphaeng Phet Municipality](https://img.shields.io/badge/Activity-Public%20Health%20Innovation-blue?style=for-the-badge&logo=google-cloud&logoColor=white)](https://www.kppmu.go.th/news-detail?hd=1&id=124000)
-**Organization:** Kamphaeng Phet Municipality Community Hospital (KPPMCH)  
-**Reference:** [Public Health Service Innovation - kppmu.go.th](https://www.kppmu.go.th/news-detail?hd=1&id=124000)
+## Activity & Reporting
+| Category | Detail | Link / Reference |
+| :--- | :--- | :--- |
+| **Official Recognition** | Public Health Innovation | [kppmu.go.th/news-detail](https://www.kppmu.go.th/news-detail?hd=1&id=124000) |
+| **Live Dashboard** | **Looker Studio (Real-time)** | [View Executive Dashboard](https://lookerstudio.google.com/u/0/reporting/9a9e9348-d32c-4577-ba31-33bcea283fee/page/page_12345) |
+| **Project Status** | Official Implementation | Registered Municipal Innovation |
 
 ---
 
-## 1. System Architecture
-| Layer | Component | Specification |
+## 1. System Architecture Matrix
+| Layer | Component | Functional Role |
 | :--- | :--- | :--- |
-| **Frontend** | KPPMCH Web App | kppmch-register.vercel.app |
-| **Interface** | LINE Messaging API | Group Webhook Context |
-| **Logic** | Google Apps Script | Serverless API Handler |
-| **Database** | Google Sheets | Structured Clinical Logs |
+| **Frontend** | KPPMCH Web App | User Interface & Registration Entry |
+| **Interface** | LINE Messaging API | Event-Driven Webhook Gateway |
+| **Logic** | Google Apps Script | Serverless Transaction Processing |
+| **Database** | Google Sheets | Structured Clinical Data Storage |
+| **Reporting** | **Looker Studio** | **Executive Data Visualization** |
 
 ---
 
-## 2. Technical Workflow
-| Process | Method | Action |
+## 2. Automation & Technical Workflow
+| Process | Method | Operational Outcome |
 | :--- | :--- | :--- |
-| **Tracking** | `source.groupId` | Segregate data by Clinical Ward |
-| **Capture** | Regex: `(\d{13})` | Auto-extract National ID |
-| **Validation** | Conditional Logic | Check format and duplicate entries |
-| **Sync** | `UrlFetchApp` | Real-time feedback to LINE Group |
+| **Tracking** | `source.groupId` | Automated Ward-level Segregation |
+| **Capture** | Regex `(\d{13})` | Zero-Error National ID Extraction |
+| **Validation** | Conditional Logic | Duplicate Entry & Format Protection |
+| **Analytics** | Data Connector | Automated Sync to Looker Studio |
 
 ---
 
-## 3. Data Mapping & PDPA Compliance
-| Field | Data Source | Compliance Detail |
+## 3. Data Governance (PDPA Structure)
+| Attribute | Extraction Source | Compliance Detail |
 | :--- | :--- | :--- |
-| **Department** | `event.source.groupId` | Ward-level data isolation |
-| **Timestamp** | `event.timestamp` | Transaction logging |
-| **Patient Name** | Text Parsing | Purpose-based collection only |
-| **Citizen ID** | Regex Match | Protected Sheet access |
+| **Department** | `event.source.groupId` | Purpose-based Isolation |
+| **Timestamp** | `event.timestamp` | Audit Trail Integrity |
+| **Citizen ID** | Regex Match | Restricted Data Access Controls |
 
 ---
 
 ## 4. Implementation Framework
-| Step | Category | Task |
+| Step | Phase | Task |
 | :--- | :--- | :--- |
-| **1** | Database | Prepare Sheets with KPPMCH Headers |
-| **2** | Backend | Deploy GAS Web App (Access: Anyone) |
-| **3** | API Link | Bind GAS URL to LINE Webhook |
-| **4** | Testing | Verify data flow from Group to Sheets |
+| **1** | Database | Initialize Sheets with Master Headers |
+| **2** | Backend | Deploy GAS API Endpoint |
+| **3** | Integration | Bind Webhook to LINE Developer Console |
+| **4** | **Reporting** | **Connect Dataset to Looker Studio Dashboard** |
 
 ---
 
-## 5. Developer & Contact
+## 5. Contact & Credits
 | Type | Detail |
 | :--- | :--- |
 | **Author** | Ratchanon Noknoy |
-| **License** | MIT © 2026 |
 | **LinkedIn** | [linkedin.com/in/ratchanon-noknoy/](https://www.linkedin.com/in/ratchanon-noknoy/) |
 | **GitHub** | [github.com/Ratchanon2318](https://github.com/Ratchanon2318) |
+| **License** | MIT © 2026 |
