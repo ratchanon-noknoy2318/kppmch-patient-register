@@ -1,4 +1,4 @@
-# KPPMCH Telemedicine Registration
+# KPPMCH Patient Registration
 **LINE Group & Google Apps Script Integration**
 
 [![Project Header](https://kppmch-register.vercel.app/og-image.png)](https://kppmch-register.vercel.app/)
