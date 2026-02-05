@@ -1,83 +1,64 @@
 # KPPMCH Patient Registration
 
-| PROJECT HEADER |
+| PROJECT ARCHITECTURE OVERVIEW |
 | :--- |
-| **LINE Group & Google Apps Script Integration** |
+| **High-Level System Design & Clinical Integration** |
 | [![Project Header](https://kppmch-register.vercel.app/og-image.png)](https://kppmch-register.vercel.app/) |
 
 ---
 
-| PROJECT GENESIS & REQUIREMENTS |
-| :--- |
-| **Source of Requirements** |
-| This system was developed based on specific requirements from **Senior Professional Level Nurses (พยาบาลวิชาชีพชำนาญการพิเศษ)** to solve ward-level registration bottlenecks and ensure clinical data integrity. |
-
----
-
-| ACTIVITY & REPORTING | | |
+| 1. CORE SYSTEM ARCHITECTURE | | |
 | :--- | :--- | :--- |
-| **Category** | **Detail** | **Link / Reference** |
-| Official Recognition | Public Health Innovation | [kppmu.go.th/news-detail](https://www.kppmu.go.th/news-detail?hd=1&id=124000) |
-| Live Dashboard | **Looker Studio (Real-time)** | [View Executive Dashboard](https://lookerstudio.google.com/u/0/reporting/9a9e9348-d32c-4577-ba31-33bcea283fee/page/page_12345) |
-| Project Status | Official Implementation | Registered Municipal Innovation |
+| **Component** | **Technology Stack** | **Architectural Responsibility** |
+| **Client Interface** | LIFF / Web Application | Provides a sanitized UI for data entry, bypassing chat limitations. |
+| **Messaging Gateway** | LINE Messaging API | Acts as an Event-Driven Webhook to capture group-specific metadata. |
+| **Serverless Logic** | Google Apps Script (GAS) | Execution of business logic, Regex parsing, and API routing. |
+| **Cloud Storage** | Google Sheets API | Serves as a lightweight NoSQL-style database for rapid deployment. |
+| **BI Layer** | Looker Studio Connector | Direct abstraction of raw data into executive-level KPIs. |
 
 ---
 
-| CLINICAL QUALITY & NURSING MANAGEMENT | | |
+| 2. TECHNICAL DATA FLOW | | |
 | :--- | :--- | :--- |
-| **Focus Area** | **Nursing Standard** | **Strategic Outcome** |
-| Patient Safety | Right Person, Right Record | 100% Accuracy in National ID Verification |
-| Workflow Optimization | Lean Nursing Process | Reduced Administrative Time for Ward Nurses |
-| Data-Driven Decisions | Real-time Bed/Case Monitoring | Enhanced Resource Allocation for Special Care |
-| Quality Assurance | Continuous Quality Improvement (CQI) | Systematic Data Audit for Accreditation (HA/JCI) |
+| **Sequence** | **Action** | **Technical Detail** |
+| **Input** | User Registration | Data submitted via Webhook with `groupId` and `userId` context. |
+| **Processing** | Regex Extraction | Validation of 13-digit ID via `RegExp` pattern matching in GAS. |
+| **Storage** | Append Row | Atomic write operation to specific Sheet tabs based on Ward ID. |
+| **Security** | Payload Verification | Ensures requests originate from authorized LINE Webhook signatures. |
 
 ---
 
-| 1. SYSTEM ARCHITECTURE MATRIX | | |
+| 3. NURSING MANAGEMENT ARCHITECTURE | | |
 | :--- | :--- | :--- |
-| **Layer** | **Component** | **Functional Role** |
-| Frontend | KPPMCH Web App | User Interface & Registration Entry |
-| Interface | LINE Messaging API | Event-Driven Webhook Gateway |
-| Logic | Google Apps Script | Serverless Transaction Processing |
-| Database | Google Sheets | Structured Clinical Data Storage |
-| Reporting | **Looker Studio** | **Executive Data Visualization** |
+| **Requirement Source** | **Senior Professional Nurse** | **Requirement Fulfillment** |
+| **Ward Isolation** | Multi-tenant Design | Data is automatically segregated by LINE `groupId` (One group per Ward). |
+| **Audit Ability** | Traceability Schema | Every entry is logged with a Server-Side Timestamp and User Metadata. |
+| **Performance** | Low-Latency Entry | Optimized for fast-paced clinical environments (Zero login required). |
 
 ---
 
-| 2. AUTOMATION & TECHNICAL WORKFLOW | | |
+| 4. DATA GOVERNANCE & PDPA ARCHITECTURE | | |
 | :--- | :--- | :--- |
-| **Process** | **Method** | **Operational Outcome** |
-| Tracking | `source.groupId` | Automated Ward-level Segregation |
-| Capture | Regex `(\d{13})` | Zero-Error National ID Extraction |
-| Validation | Conditional Logic | Duplicate Entry & Format Protection |
-| Analytics | Data Connector | Automated Sync to Looker Studio |
+| **Layer** | **Method** | **Security Detail** |
+| **Encryption** | HTTPS / TLS 1.3 | All data in transit between LINE and GAS is fully encrypted. |
+| **Access Control** | Spreadsheet Sharing | Data access is restricted via Google Workspace IAM roles. |
+| **Privacy** | Minimal Data Capture | Only necessary Patient Identifiers are extracted via Regex. |
 
 ---
 
-| 3. DATA GOVERNANCE (PDPA & ETHICS) | | |
+| 5. DEPLOYMENT & SCALABILITY | | |
 | :--- | :--- | :--- |
-| **Attribute** | **Extraction Source** | **Compliance Detail** |
-| Department | `event.source.groupId` | Purpose-based Isolation (Ward-specific) |
-| Timestamp | `event.timestamp` | Audit Trail for Nursing Documentation |
-| Citizen ID | Regex Match | Restricted Access to Sensitive Data |
-| Compliance | PDPA Standards | Secure Storage of Patient Identifiers |
+| **Phase** | **Action Item** | **Strategic Goal** |
+| **Requirement** | **Clinical Needs Analysis** | **Aligned with Senior Professional Nursing Standards.** |
+| **Development** | GAS Web App Deployment | Implementation of `doPost(e)` handlers for real-time processing. |
+| **Integration** | Webhook Tunneling | Establishing the link between LINE Developers Console and Cloud script. |
+| **Monitoring** | Dashboard Binding | Mapping Sheet headers to Looker Studio dimensions and metrics. |
 
 ---
 
-| 4. IMPLEMENTATION FRAMEWORK | | |
-| :--- | :--- | :--- |
-| **Step** | **Phase** | **Task** |
-| **0** | **Requirement** | **Clinical Need Assessment with Senior Nursing Staff** |
-| 1 | Database | Initialize Sheets with Master Headers |
-| 2 | Backend | Deploy GAS API Endpoint |
-| 3 | Integration | Bind Webhook to LINE Developer Console |
-| 4 | **Reporting** | **Connect Dataset to Looker Studio Dashboard** |
-
----
-
-| 5. CONTACT & CREDITS | |
+| 6. CONTACT & CREDITS | |
 | :--- | :--- |
-| **Author** | Ratchanon Noknoy |
+| **Architect** | Ratchanon Noknoy |
 | **LinkedIn** | [linkedin.com/in/ratchanon-noknoy/](https://www.linkedin.com/in/ratchanon-noknoy/) |
 | **GitHub** | [github.com/Ratchanon2318](https://github.com/Ratchanon2318) |
 | **License** | MIT © 2026 |
