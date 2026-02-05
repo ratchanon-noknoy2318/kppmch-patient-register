@@ -60,5 +60,5 @@
 | :--- | :--- |
 | **Architect** | Ratchanon Noknoy |
 | **LinkedIn** | [linkedin.com/in/ratchanon-noknoy/](https://www.linkedin.com/in/ratchanon-noknoy/) |
-| **GitHub** | [github.com/Ratchanon2318](https://github.com/Ratchanon2318) |
+| **GitHub** | [github.com/ratchanon-noknoy2318](https://github.com/ratchanon-noknoy2318) |
 | **License** | MIT © 2026 |
