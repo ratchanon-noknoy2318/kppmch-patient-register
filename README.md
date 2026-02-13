@@ -21,7 +21,7 @@
 ### 2. CLINICAL IMPLEMENTATION & GOVERNANCE
 | Aspect | Implementation Methodology | Technical Detail |
 | :--- | :--- | :--- |
-| **Requirement** | Nursing Frontline Driven | Developed from **Senior Professional Nurse** needs |
+| **Requirement** | Nursing Frontline Driven | Developed from Senior Professional Nurse needs |
 | **Agility** | Rapid Adaptation Lifecycle | Fast-track development for Hospital Operations |
 | **Data Isolation** | Multi-tenant Ward Design | Automatic segregation via LINE Group ID context |
 | **Cybersecurity** | TLS 1.3 & Thailand PDPA | Encryption in transit & Minimal Data Privacy |
