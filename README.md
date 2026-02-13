@@ -46,4 +46,4 @@
 | **License** | MIT © 2026 |
 
 ---
-<p align="center"><small>Hospital Information System (HIS) Integration | All projects derived from Nursing Frontline requirements</small></p>
+<p align="center"><small>All project requirements were directly defined by Senior Professional Nurses (Specialist Level).</small></p>
