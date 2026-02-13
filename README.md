@@ -10,7 +10,7 @@
 ### 1. HEALTHCARE TECHNOLOGY ARCHITECTURE (HIS)
 | Layer | Technology Stack | Architectural Responsibility |
 | :--- | :--- | :--- |
-| **Client Interface** | LIFF / Next.js Web App | Patient Identity Entry & UI Sanitization |
+| **Client Interface** | Next.js Web App | Patient Identity Entry & UI Sanitization |
 | **Cloud Gateway** | LINE Messaging API | Event-Driven Webhook & Metadata Capture |
 | **Serverless Logic** | Google Apps Script (GAS) | Regex Validation, API Routing & Logic Execution |
 | **Cloud Database** | Google Sheets API | Scalable Lightweight NoSQL-style Data Storage |
