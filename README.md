@@ -1,49 +1,49 @@
-# KPPMCH Patient Registration | Healthcare Telemedicine System
+# KPPMCH Patient Registration | LINE Telemedicine & HIS Data Pipeline
 
 | PROJECT ARCHITECTURE OVERVIEW |
 | :--- |
-| **High-Level System Design & Clinical Integration** |
+| **High-Level System Design & Clinical Integration for Municipal Healthcare** |
 | [![Project Header](https://kppmch-register.vercel.app/og-image.png)](https://kppmch-register.vercel.app/) |
 
 ---
 
-### 1. HEALTHCARE SYSTEM ARCHITECTURE
+### 1. HEALTHCARE TECHNOLOGY ARCHITECTURE (HIS)
 | Layer | Technology Stack | Architectural Responsibility |
 | :--- | :--- | :--- |
-| **Interface** | LIFF / Web App | Sanitized UI & Patient Data Entry |
-| **Gateway** | LINE Messaging API | Event-Driven Webhook & Metadata Capture |
-| **Logic** | Serverless (GAS) | Regex Validation & Real-time Routing |
-| **Storage** | Google Sheets API | Cloud NoSQL-style Database |
-| **Analytics** | Looker Studio BI | Executive-level KPI & Triage Dashboard |
+| **Client Interface** | LIFF / Next.js Web App | Patient Identity Entry & UI Sanitization |
+| **Cloud Gateway** | LINE Messaging API | Event-Driven Webhook & Metadata Capture |
+| **Serverless Logic** | Google Apps Script (GAS) | Regex Validation, API Routing & Logic Execution |
+| **Cloud Database** | Google Sheets API | Scalable Lightweight NoSQL-style Data Storage |
+| **Business Intelligence** | Looker Studio Dashboards | Real-time Clinical KPI & Triage Abstraction |
 
 ---
 
-### 2. CLINICAL IMPLEMENTATION & COMPLIANCE
-| Aspect | Methodology | Implementation Detail |
+### 2. CLINICAL IMPLEMENTATION & GOVERNANCE
+| Aspect | Implementation Methodology | Technical Detail |
 | :--- | :--- | :--- |
-| **Workflow** | Agile / Rapid Learning | Derived from **Nursing Frontline Requirements** |
-| **Triage** | Ward Isolation | Multi-tenant Design via Group ID context |
-| **Security** | PDPA / TLS 1.3 | Encryption & Minimal Data Capture Policy |
-| **Status** | Production | Deployed for **Kamphaeng Phet Municipality** |
+| **Requirement** | Nursing Frontline Driven | Developed from **Senior Professional Nurse** needs |
+| **Agility** | Rapid Adaptation Lifecycle | Fast-track development for Hospital Operations |
+| **Data Isolation** | Multi-tenant Ward Design | Automatic segregation via LINE Group ID context |
+| **Cybersecurity** | TLS 1.3 & Thailand PDPA | Encryption in transit & Minimal Data Privacy |
 
 ---
 
-### 3. OFFICIAL VERIFICATION & EVIDENCE
-| Verification Source | Evidence Link |
+### 3. OFFICIAL VERIFICATION & PUBLIC RECORDS
+| Validation Type | Evidence Link |
 | :--- | :--- |
-| **Clinical Usage** | [Official Hospital Implementation Report](https://www.kppmu.go.th/news-detail?hd=1&id=124000) |
-| **Data Governance** | [Official PDPA Training Record](https://www.kppmu.go.th/news-detail?hd=1&id=126854) |
-| **Authority** | **Verified by Kamphaeng Phet Municipal Secretary** |
+| **Clinical Deployment** | [Official Hospital Implementation News](https://www.kppmu.go.th/news-detail?hd=1&id=124000) |
+| **Security Compliance** | [Official Cybersecurity & PDPA Record](https://www.kppmu.go.th/news-detail?hd=1&id=126854) |
+| **Executive Approval** | **Verified by Kamphaeng Phet Municipal Secretary** |
 
 ---
 
-### 4. CONTACT & CREDITS
+### 4. CONTACT & PROFESSIONAL CREDITS
 | Attribute | Professional Reference |
 | :--- | :--- |
-| **Architect** | Ratchanon Noknoy |
-| **LinkedIn** | [linkedin.com/in/ratchanon-noknoy](https://www.linkedin.com/in/ratchanon-noknoy/) |
-| **GitHub** | [github.com/ratchanon-noknoy2318](https://github.com/ratchanon-noknoy2318) |
+| **Solution Architect** | Ratchanon Noknoy |
+| **LinkedIn Profile** | [linkedin.com/in/ratchanon-noknoy](https://www.linkedin.com/in/ratchanon-noknoy/) |
+| **GitHub Portfolio** | [github.com/ratchanon-noknoy2318](https://github.com/ratchanon-noknoy2318) |
 | **License** | MIT © 2026 |
 
 ---
-<p align="center"><small>All projects derived from Nursing Frontline requirements</small></p>
+<p align="center"><small>Hospital Information System (HIS) Integration | All projects derived from Nursing Frontline requirements</small></p>
