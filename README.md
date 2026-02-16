@@ -46,4 +46,4 @@
 | **License** | MIT © 2026 |
 
 ---
-<p align="center"><small>All project requirements were directly defined by Senior Professional Nurses (Specialist Level).</small></p>
+<p align="center"><small>All project requirements for this project were directly defined by Senior Professional Nurses (Specialist Level).</small></p>
